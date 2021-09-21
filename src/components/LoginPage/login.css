@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
+body {
+  background-color: #f6f6f6;
+}
+.main {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.login_page {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.login_right {
+  height: 375px;
+  width: 100%;
+  margin-top: 60px;
+
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+.login_page_content {
+  margin-left: 50px;
+}
+.login_title {
+  font-family: "Grand Hotel", cursive;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.login_content {
+  margin-top: 20px;
+}
+
+.login_content input {
+  width: 75%;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #f6f6f6;
+  border: 1px solid #e0e0e0;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+
+.or {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 40% auto 40%;
+  margin-top: 20px;
+  align-items: center;
+  font-size: small;
+  color: #5c5c5c;
+}
+
+.line {
+  border-bottom: 1px solid #e0e0e0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fb {
+  /* display: grid;
+  grid-template-columns: 10% 90%; */
+  margin: auto;
+  width: 75%;
+  color: rgb(40, 40, 136);
+  align-items: center;
+  margin-top: 20px;
+}
+
+.forgot-password {
+  font-size: smaller;
+  margin-top: 20px;
+}
+.forgot-password a {
+  text-decoration: none;
+}
+
+.create {
+  margin-top: 20px;
+  height: 70px;
+  width: 100%;
+  margin-top: 20px;
+
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.store {
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    display: none;
+  }
+  .login_page {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 100%;
+  }
+  .login_page_content {
+    margin-left: 0;
+  }
+  .main {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .main {
+    width: 80%;
+  }
+}
