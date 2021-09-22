@@ -1,5 +1,6 @@
 import Mobile from "../mobile/mobile";
 import "./login.css";
+import { Link } from "react-router-dom";
 
 import ButtonUnstyled, {
   buttonUnstyledClasses,
@@ -55,15 +56,9 @@ const Login = () => {
                 <input
                   type="text"
                   name="usernmae"
-                  id=""
                   placeholder="Phone number, username or email"
                 />
-                <input
-                  type="password"
-                  name="password"
-                  id=""
-                  placeholder="Password"
-                />
+                <input type="password" name="password" placeholder="Password" />
                 <div className="login_btn">
                   <CustomButton>Log In</CustomButton>
                 </div>
@@ -73,7 +68,7 @@ const Login = () => {
                   <div className="line"></div>
                 </div>
                 <div className="fb">
-                  <i class="fab fa-facebook-square"> </i>
+                  <i className="fab fa-facebook-square"> </i>
                   <span> Log in with Facebook</span>
                 </div>
                 <div
@@ -93,16 +88,16 @@ const Login = () => {
                 }}
               >
                 Don't have an account?
-                <a
-                  href="#"
+                <Link
+                  to="/signup"
                   style={{
                     textDecoration: "none ",
                     color: "rgb(0, 132, 255)",
                   }}
                 >
                   {" "}
-                  Sign Up
-                </a>
+                  Sign up
+                </Link>
               </div>
             </div>
             <div className="store">
