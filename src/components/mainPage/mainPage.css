@@ -1,0 +1,22 @@
+.desktop {
+  width: 80%;
+  margin: 20px auto auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.posts {
+  max-width: 616px;
+  /* max-height: inherit; */
+  background-color: black;
+}
+
+.right {
+  margin-left: 20px;
+}
+
+.right-top .user img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}

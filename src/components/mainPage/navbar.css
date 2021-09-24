@@ -1,0 +1,84 @@
+nav {
+  background-color: white;
+  width: 100%;
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  /* width: 975px; */
+  margin: auto;
+  align-items: center;
+}
+.logo-2 {
+  font-family: "Grand Hotel", cursive;
+  font-size: 30px;
+}
+
+.search {
+  text-align: center;
+  width: 100%;
+}
+.search input {
+  max-width: 215px;
+  height: 28px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  font-family: "FontAwesome";
+  text-align: center;
+  color: #ccc;
+}
+
+.search input:focus {
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  color: #000;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  justify-items: end;
+  align-items: center;
+}
+.icons li {
+  list-style: none;
+  margin: 0 10px;
+  font-size: 22px;
+}
+
+.ic {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .search input {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .icons,
+  .search input {
+    display: none;
+  }
+  .logo-2 {
+    text-align: center;
+    width: 80%;
+  }
+  .navbar {
+    width: 100%;
+  }
+}

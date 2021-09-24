@@ -7,7 +7,7 @@ import ButtonUnstyled, {
 } from "@mui/core/ButtonUnstyled";
 import { styled } from "@mui/system";
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const CustomButtonRoot = styled("button")(`
   background-color: #007fff;
   width: 77%;
@@ -51,7 +51,7 @@ const Login = () => {
           <Mobile />
           <div className="login_page_content">
             <div className="login_right">
-              <div className="login_title">Instagram</div>
+              <div className="logo">Instagram</div>
               <div className="login_content">
                 <input
                   type="text"
@@ -60,7 +60,15 @@ const Login = () => {
                 />
                 <input type="password" name="password" placeholder="Password" />
                 <div className="login_btn">
-                  <CustomButton>Log In</CustomButton>
+                  <Link to="/">
+                    <CustomButton
+                      onClick={() => {
+                        setIsLoggedIn(true);
+                      }}
+                    >
+                      Log In
+                    </CustomButton>
+                  </Link>
                 </div>
                 <div className="or">
                   <div className="line"></div>

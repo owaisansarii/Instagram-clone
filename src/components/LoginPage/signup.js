@@ -6,7 +6,7 @@ const Signup = () => {
       <div className="signup-container">
         <div className="signup">
           <form action="">
-            <h1>Instagram</h1>
+            <div className="logo">Instagram</div>
             <p>Sign up to see photos and videos from your firends </p>
             <button>
               <i className="fab fa-facebook-square"> </i> Login with Facebook
@@ -28,7 +28,7 @@ const Signup = () => {
             </div>
           </form>
           <div className="box-2">
-            Have an account? <Link to="/login">Login</Link>
+            Have an account? <Link to="/">Login</Link>
           </div>
           <div className="store">
             Get the app
