@@ -85,7 +85,7 @@ const Login = ({ setIsLoggedIn }) => {
                     fontSize: "12px",
                   }}
                 >
-                  Forgot password?
+                  Forgot passwod?
                 </div>
               </div>
             </div>

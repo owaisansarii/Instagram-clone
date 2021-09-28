@@ -1,0 +1,46 @@
+.comment-header {
+  display: grid;
+  height: 30px;
+  grid-template-columns: 40px 40px 40px;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-left: 10px;
+  text-align: center;
+}
+.like-count {
+  padding-left: 10px;
+}
+
+.like-count span {
+  font-weight: 600;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.caption {
+  padding-left: 20px;
+}
+.caption > .user-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.read-or-hide {
+  color: gray;
+}
+
+.read-or-hide:hover {
+  cursor: pointer;
+}
+
+.view-all {
+  color: gray;
+}
+
+.caption-text {
+  font-size: 14px;
+}
+
+.view-comment {
+  color: gray;
+  font-size: 14px;
+}

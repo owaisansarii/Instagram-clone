@@ -1,10 +1,54 @@
+import { useRef, useEffect, useState } from "react";
 import "./story.css";
 const Story = () => {
+  const [touch, setTouch] = useState(false);
+  const [start, setStart] = useState(false);
+  const [storyEnd, setStoryEnd] = useState(false);
+  const storyRef = useRef(null);
+  const scrollLeft = () => {
+    let storyStart = (storyRef.current.scrollLeft -= 300);
+    if (storyStart <= 0) {
+      setStart(true);
+    }
+    setStoryEnd(false);
+  };
+  const scrollRight = () => {
+    let storyEnd = (storyRef.current.scrollLeft += 300);
+    setStart(false);
+    if (
+      storyEnd >=
+      storyRef.current.scrollWidth - storyRef.current.clientWidth
+    ) {
+      setStoryEnd(true);
+    }
+  };
+  const isTouchDevice = () => {
+    return "ontouchstart" in window || navigator.maxTouchPoints;
+  };
+  useEffect(() => {
+    if (isTouchDevice()) {
+      setTouch(true);
+      console.log("touch");
+    }
+    if (storyRef.current.scrollLeft === 0) {
+      setStart(true);
+    }
+  }, []);
   return (
     <>
       <div className="stories">
-        <div className="story-accounts">
-          {/* <div className="left-scroll">&#60;</div> */}
+        {touch ? (
+          <></>
+        ) : (
+          !start && (
+            <div className="scroll-left">
+              <div className="text" onClick={scrollLeft}>
+                <i className="fas fa-chevron-circle-left"></i>
+              </div>
+            </div>
+          )
+        )}
+        <div className="story-accounts" ref={storyRef}>
           <div className="userprofile">
             <div className="story-viewed">
               <img
@@ -127,6 +171,17 @@ const Story = () => {
             <div className="story-account-username">wasi</div>
           </div>
         </div>
+        {touch ? (
+          <></>
+        ) : (
+          !storyEnd && (
+            <div className="scroll-right" onClick={scrollRight}>
+              <div className="text">
+                <i className="fas fa-chevron-circle-right"></i>
+              </div>
+            </div>
+          )
+        )}
       </div>
     </>
   );
