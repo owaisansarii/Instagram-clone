@@ -1,15 +1,23 @@
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
+import { Link } from "react-router-dom";
 const Suggestions = ({ hideSuggestions }) => {
+  const { user } = useContext(AuthContext);
+  const noProfileImg =
+    "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y";
   if (!hideSuggestions) {
     return (
       <>
         <div className="right-top">
-          <div className="user">
-            <img src="https://i.imgur.com/qQq3QZL.jpg" alt="img" />
-          </div>
-          <div className="user-det">
-            <h4>owais_a</h4>
-            <div className="name">Owais Ansari</div>
-          </div>
+          <Link to={user.user.username}>
+            <div className="user">
+              <img src={user.user.profilePicture || noProfileImg} alt="img" />
+            </div>
+            <div className="user-det">
+              <h4>{user.user.username}</h4>
+              <div className="name">{user.user.fullname}</div>
+            </div>
+          </Link>
           <div className="switch">Switch</div>
         </div>
         <div className="suggestions">

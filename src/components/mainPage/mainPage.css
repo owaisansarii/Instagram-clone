@@ -22,7 +22,14 @@
   width: 100%;
   margin-top: 10px;
   display: grid;
-  grid-template-columns: 20% 65% 15%;
+  grid-template-columns: 85% 15%;
+  margin-top: 20px;
+}
+
+.right-top > a {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 30% 70%;
   margin-top: 20px;
 }
 
@@ -131,11 +138,18 @@
   border: 1px solid #e6e6e6;
 }
 
-.user-profile > .username {
+.user-profile > a > .username {
   margin: auto 0 auto 10px;
   font-size: 14px;
   color: #262626;
   font-weight: 600;
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+.user-profile > .username:hover {
+  cursor: pointer;
 }
 
 .three-dots {
@@ -150,19 +164,32 @@
   border-left: 1px solid #e6e6e6;
   border-right: 1px solid #e6e6e6;
 }
-
+/* 
 .post-comment {
   width: 100%;
   height: 60px;
   display: grid;
-  grid-template-columns: 8% 92%;
+  grid-template-columns: 15% 85%;
   align-items: center;
 
   border: 1px solid #e6e6e6;
+} */
+
+.post-comment {
+  /*left and right margin 20 px*/
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border: 0 1px solid #e6e6e6;
 }
 
 .post-comment > i {
-  margin-left: 10px;
+  margin-right: 10px;
   font-size: 24px;
 }
 .post-comment input {
@@ -195,4 +222,9 @@
   color: #47b1f7;
   font-size: 14px;
   font-weight: 600;
+}
+
+.post-comment form > button:hover {
+  cursor: pointer;
+  color: blue;
 }

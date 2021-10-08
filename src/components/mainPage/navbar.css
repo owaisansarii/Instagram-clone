@@ -12,13 +12,31 @@ nav {
   /* margin-bottom: 200px; */
 }
 
+.search-container::before {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+  /* top: 50%; */
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 200px;
+}
+.search-container ul {
+  z-index: 4;
+  position: absolute;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .navbar {
-  display: grid;
-  grid-template-columns: 10% 80% 10%;
+  display: flex;
 
   width: 975px;
   height: 54px;
-  /* width: 975px; */
   margin: auto;
   align-items: center;
 }
@@ -33,19 +51,23 @@ nav {
   margin: auto;
   align-items: center;
 }
-.logo-2 {
+.logo-2 a {
   font-family: "Grand Hotel", cursive;
   font-size: 30px;
-  width: 100%;
-  text-align: center;
+  width: 40%;
+  /* text-align: center; */
+}
+
+.logo-2 {
+  width: 40%;
 }
 
 .search {
   text-align: center;
-  width: 100%;
+  width: 196.59px;
 }
 .search input {
-  max-width: 215px;
+  width: 196.59px;
   height: 28px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -64,10 +86,13 @@ nav {
 }
 
 .icons {
+  width: 40%;
+  height: 25px;
   display: flex;
   justify-content: flex-end;
   justify-items: end;
   align-items: center;
+  position: relative;
 }
 .icons li {
   list-style: none;
@@ -88,10 +113,19 @@ nav {
   width: 220px;
   height: 110px;
   background-color: white;
-  top: 54px;
-  right: 90px;
+  top: 40px;
   border-radius: 5px;
   border: 1px solid #e6e6e6;
+  right: -110px;
+}
+
+.user-account {
+  position: relative;
+  /* display: flex; */
+
+  height: 25px;
+  justify-content: center;
+  align-items: center;
 }
 
 .triangle {
@@ -141,11 +175,17 @@ nav {
   .search input {
     display: none;
   }
+  .search .fas {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 310px) {
   .icons,
   .search input {
+    display: none;
+  }
+  .search .fas {
     display: none;
   }
   .logo-2 {

@@ -1,0 +1,51 @@
+.create {
+  margin: -1px;
+}
+.create_header {
+  height: 44px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.cross {
+  /* height: 32px; */
+  align-items: center;
+  font-size: 24px;
+  width: 50%;
+  color: black;
+  text-decoration: none;
+}
+.heading {
+  width: 80%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.create_header > button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #0095f6;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.photo_container {
+  width: 100%;
+  padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+  position: relative;
+  /* margin-left: 2.5%; */
+  background-color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.photo_container > img {
+  position: absolute;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  width: 100%;
+}

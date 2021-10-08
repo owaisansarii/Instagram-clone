@@ -1,4 +1,7 @@
 import { useRef, useEffect, useState } from "react";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
+
 import "./story.css";
 const Story = () => {
   const [touch, setTouch] = useState(false);
@@ -28,7 +31,6 @@ const Story = () => {
   useEffect(() => {
     if (isTouchDevice()) {
       setTouch(true);
-      console.log("touch");
     }
     if (storyRef.current.scrollLeft === 0) {
       setStart(true);
@@ -48,129 +50,152 @@ const Story = () => {
             </div>
           )
         )}
-        <div className="story-accounts" ref={storyRef}>
-          <div className="userprofile">
-            <div className="story-viewed">
-              <img
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                alt=""
-              />
-              <div className="plus">
-                <i className="fas fa-plus"></i>
+        <Stack>
+          <div className="story-accounts" ref={storyRef}>
+            <div className="userprofile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                  alt=""
+                />
+                <div className="plus">
+                  <i className="fas fa-plus"></i>
+                </div>
+              </div>
+              <div className="story-account-username">khaby</div>
+            </div>
+
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://www.w3schools.com/howto/img_avatar.png"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">
+                lol2jkjkjjkjsdsdkjkj3
               </div>
             </div>
-            <div className="story-account-username">khaby</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-viewed">
-              <img
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1632342084542-e1639e7e646d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">
+                lol23jhksdsdsdsdkjjkjk
+              </div>
             </div>
-            <div className="story-account-username">khaby</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="sto">
+                <Avatar
+                  alt="Cindy Baker"
+                  src="https://cdn.worldvectorlogo.com/logos/facebook-messenger-white.svg"
+                  sx={{ width: 56, height: 56 }}
+                  style={{
+                    margin: "3px",
+                    border: " 2px solid white",
+                  }}
+                />
+              </div>
+              <div className="story-account-username">khaby</div>
             </div>
-            <div className="story-account-username">lol2jkjkjjkjsdsdkjkj3</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1632342084542-e1639e7e646d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="sto">
+                <Avatar
+                  alt="Cindy Baker"
+                  src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
+                  sx={{ width: 56, height: 56 }}
+                  style={{
+                    margin: "3px",
+                    border: " 2px solid white",
+                  }}
+                />
+              </div>
+              <div className="story-account-username">khaby</div>
             </div>
-            <div className="story-account-username">lol23jhksdsdsdsdkjjkjk</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">placeholder</div>
             </div>
-            <div className="story-account-username">lol23jhksdsdsdsdkjjkjk</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">
+                lol23jhksdsdsdsdkjjkjk
+              </div>
             </div>
-            <div className="story-account-username">placeholder</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">placeholder</div>
             </div>
-            <div className="story-account-username">lol23jhksdsdsdsdkjjkjk</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">
+                lol23jhksdsdsdsdkjjkjk
+              </div>
             </div>
-            <div className="story-account-username">placeholder</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">placeholder</div>
             </div>
-            <div className="story-account-username">lol23jhksdsdsdsdkjjkjk</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                alt=""
-              />
+            {/* <div className="right-scroll">&#62;</div> */}
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">
+                lol23jhksdsdsdsdkjjkjk
+              </div>
             </div>
-            <div className="story-account-username">placeholder</div>
-          </div>
-          {/* <div className="right-scroll">&#62;</div> */}
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-account-image">
+                <img
+                  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">placeholder</div>
             </div>
-            <div className="story-account-username">lol23jhksdsdsdsdkjjkjk</div>
-          </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                alt=""
-              />
+            <div className="story-profile">
+              <div className="story-viewed">
+                <img
+                  src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
+                  alt=""
+                />
+              </div>
+              <div className="story-account-username">wasi</div>
             </div>
-            <div className="story-account-username">placeholder</div>
           </div>
-          <div className="story-profile">
-            <div className="story-account-image">
-              <img
-                src="https://images.unsplash.com/photo-1632258521940-b29d7d2ae9f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=436&q=80"
-                alt=""
-              />
-            </div>
-            <div className="story-account-username">wasi</div>
-          </div>
-        </div>
+        </Stack>
         {touch ? (
           <></>
         ) : (

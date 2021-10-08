@@ -11,36 +11,52 @@
   padding-left: 10px;
 }
 
-.like-count span {
+.like-count div {
   font-weight: 600;
   font-size: 14px;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .caption {
   padding-left: 20px;
+  margin-right: 20px;
+
+  font-size: 15px;
 }
-.caption > .user-name {
-  font-size: 14px;
-  font-weight: 600;
+
+.false {
+  height: 55px;
 }
-.read-or-hide {
+
+.read-more {
+  width: 400px;
   color: gray;
 }
 
-.read-or-hide:hover {
+.read-more:hover {
+  color: black;
   cursor: pointer;
 }
 
-.view-all {
-  color: gray;
+.comment-item {
+  color: black;
 }
 
-.caption-text {
-  font-size: 14px;
+.view-all:hover {
+  cursor: pointer;
 }
 
 .view-comment {
   color: gray;
   font-size: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.loadmore {
+  font-size: 14px;
+  color: gray;
+}
+.loadmore:hover {
+  cursor: pointer;
 }

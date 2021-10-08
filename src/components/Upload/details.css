@@ -1,0 +1,28 @@
+.details-area {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  height: 81px;
+  overflow: hidden;
+}
+
+.details-area img {
+  width: 48px;
+  height: 48px;
+}
+
+.details-area > .caption > textarea {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  padding-top: 20px;
+}
+
+.details-area > textarea:focus {
+  outline: none;
+}

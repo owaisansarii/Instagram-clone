@@ -43,6 +43,19 @@ form p {
   margin-right: auto;
 }
 
+.signup button:hover {
+  cursor: pointer;
+  background-color: #0082e6;
+}
+
+.checked .fas {
+  position: absolute;
+  color: #0095f6;
+  font-size: 12px;
+  top: 58%;
+  left: 82%;
+}
+
 .policy {
   color: #8c8c8c;
   font-size: 12px;

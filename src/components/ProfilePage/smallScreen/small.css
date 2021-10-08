@@ -1,0 +1,118 @@
+.su-profile {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.sprofile-det {
+  display: flex;
+  flex-direction: column;
+  width: 72%;
+  border-radius: 10px;
+}
+
+.sprofile-image {
+  margin-right: 25px;
+  width: 25%;
+}
+.sprofile-image img {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.susers-set {
+  width: 70%;
+  display: flex;
+  text-align: start;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 20px;
+}
+
+.susers-set > span {
+  width: 70%;
+  font-size: 25px;
+  font-weight: 100;
+  color: #262626;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+}
+
+.sprofile-det > button {
+  width: 70%;
+  height: 30px;
+  padding: 5px 9px;
+  background-color: transparent;
+  border: 1px solid #e6e6e6;
+}
+
+.suname {
+  margin-left: 20px;
+}
+
+.suname .name {
+  color: black;
+  font-weight: bold;
+}
+
+.suname > .bio > span {
+  color: #262626;
+  font-size: 15px;
+
+  margin-right: 20px;
+}
+.stablist {
+  height: 52px;
+  width: 99%;
+  margin: 0 auto;
+  border-top: 1px solid #e6e6e6;
+}
+
+.stablist-items .tabButton {
+  display: flex;
+  height: 52px;
+  align-items: center;
+  background-color: transparent;
+  color: #b2b2b2;
+}
+
+.tabButton:hover {
+  cursor: pointer;
+}
+
+.stablist-items {
+  height: 52px;
+  width: 70%;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.stablists {
+  height: 52px;
+  width: 99%;
+  margin: 0 auto;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.stablists li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #b2b2b2;
+}
+
+.stablists > li > .de {
+  color: #262626;
+  font-weight: bold;
+}

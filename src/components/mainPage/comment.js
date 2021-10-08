@@ -1,57 +1,107 @@
-import { useState, useEffect } from "react";
-import "./comment.css";
-import LinesEllipsis from "react-lines-ellipsis";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const Comment = ({ liked }) => {
-  const [like, setLike] = useState(false);
-  const [isReadMore, setIsReadMore] = useState(false);
-  const toggleReadMore = () => {
-    setIsReadMore(!isReadMore);
-    setNumberOfLines(isReadMore ? 2 : 50);
+export default function Comment({ post, user }) {
+  const [page, setPage] = useState(1);
+  const [comments, setComments] = useState([]);
+  const [hasMore, setHasMore] = useState();
+  const [total, setTotal] = useState();
+  const [loaded, setLoaded] = useState([]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post("/api/comments/" + post._id, {
+      username: user.username,
+      comment: e.target.comment.value,
+    });
+    setTotal(total + 1);
+    e.target.comment.value = "";
   };
-  const [numberOfLines, setNumberOfLines] = useState(2);
   useEffect(() => {
-    liked && setLike(liked);
-  }, [liked]);
-  const text =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe aspernatur corrupti accusamus. Eum expedita inventore consequuntur accusantium, sed quas optio dolor asperiores dolore? Beatae eius accusantium fugiat veritatis dignissimos voluptatum? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci laudantium praesentium molestias earum distinctio, repudiandae possimus ex, eum impedit hic voluptas modi vitae maxime pariatur reiciendis incidunt. Optio, tempora molestiae!";
+    const getComments = async () => {
+      const res = await axios.get(
+        "api/comments/" + post._id + "?page=1&limit=2"
+      );
+      setComments(res.data.result);
+      setTotal(res.data.total);
+      setHasMore(res.data.hasMore);
+    };
+    getComments();
+  }, [post._id]);
+
+  const fetchMore = async () => {
+    const res = await axios.get("api/comments/" + post._id + "?page=" + page);
+    setLoaded((oldComment) => [...oldComment, ...res.data.result]);
+    setHasMore(res.data.hasMore);
+    setPage(page + 1);
+  };
+  const viewMore = () => {
+    if (hasMore) {
+      fetchMore();
+    }
+  };
+
+  const viewLess = () => {
+    setView(!view);
+  };
+
+  const [view, setView] = useState(false);
+
   return (
     <>
-      <div className="comment-container">
-        <div className="comment-header">
-          <i
-            className={` ${like ? "fas" : "far"} fa-heart`}
-            onClick={() => setLike(!like)}
-            style={{ color: like ? "red" : "black" }}
-          ></i>
-          <i className="far fa-comment"></i>
-          <i className="far fa-paper-plane"></i>
-        </div>
-        <div className="like-count">
-          <span>400 likes</span>
-        </div>
-        <div className="caption">
-          <span className="user-name">hellpo</span>
-
-          <div className="caption-text">
-            <LinesEllipsis
-              text={text + "    "}
-              maxLine={numberOfLines}
-              ellipsis="..."
-              trimRight
-              basedOn="letters"
-            />
-            <span onClick={toggleReadMore} className="read-or-hide">
-              {isReadMore ? "less" : "more"}
+      <div className="view-comment">
+        {total <= 2 ? (
+          <>
+            {comments.map((comment) => (
+              <div className="comment-item" key={comment._id}>
+                <b>{comments.username}</b>
+                {comments.text}
+              </div>
+            ))}
+          </>
+        ) : (
+          <>
+            <span
+              className="view-all"
+              onClick={() => {
+                viewMore();
+                setView(!view);
+              }}
+            >
+              view all {total} comments
             </span>
-          </div>
-          <div className="view-comment">
-            <span className="view-all">view all {text.length} comments</span>
-          </div>
-        </div>
+            {view && (
+              <>
+                {loaded.map((comment) => {
+                  return (
+                    <div className="comment-item" key={comment._id}>
+                      <b>{comment.username}</b>
+                      {comment.text}
+                    </div>
+                  );
+                })}
+                <span>
+                  {hasMore ? (
+                    <span className="loadmore" onClick={viewMore}>
+                      more
+                    </span>
+                  ) : (
+                    <span className="loadmore" onClick={viewLess}>
+                      less
+                    </span>
+                  )}
+                </span>
+              </>
+            )}
+          </>
+        )}
+      </div>
+      <div className="post-comment">
+        <i className="far fa-smile"></i>
+        <form action="Post" autoComplete="off" onSubmit={handleSubmit}>
+          <input type="text" name="comment" placeholder="Add a comment..." />
+          <button>Post</button>
+        </form>
       </div>
     </>
   );
-};
-
-export default Comment;
+}

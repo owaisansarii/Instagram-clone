@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+}
+.profile-page {
+  margin-top: 74px;
+}
+
+.main-page {
+  max-width: 975px;
+  margin: 64px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.u-profile {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.bio > span {
+  font-size: 16px;
+  width: 90%;
+}
+
+.profile-image {
+  margin-right: 50px;
+}
+
+.profile-image img {
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.box {
+  width: 100%;
+  height: 800px;
+  background-color: white;
+}
+
+.profile-stats {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  width: 100%;
+  list-style-type: none;
+  color: #262626;
+}
+
+.profile-stats li {
+  margin-right: 20px;
+}
+
+.de {
+  font-weight: 600;
+}
+
+.profile-det {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  /* background-color: #262626; */
+}
+
+.users-set {
+  width: 100%;
+  display: flex;
+  text-align: start;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 20px;
+
+  /* grid-template-columns: auto 20% 20%; */
+}
+
+.users-set span {
+  width: auto;
+  font-size: 25px;
+  font-weight: 100;
+  color: #262626;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.users-set button {
+  width: 100px;
+  flex-shrink: 0;
+  margin-left: 10px;
+  padding: 5px 9px;
+  background-color: transparent;
+  border: 1px solid #e6e6e6;
+}
+
+.users-set button:hover {
+  cursor: pointer;
+}
+
+.users-set .MuiSvgIcon-root {
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+}
+
+.profile-det .name {
+  margin-top: 20px;
+  display: flex;
+  font-weight: bold;
+  color: black;
+}
+
+.tablist {
+  height: 52px;
+  width: 99%;
+  margin: 0 auto;
+  border-top: 1px solid #e6e6e6;
+}
+
+.tablist-items .tabButton {
+  display: flex;
+  height: 52px;
+  align-items: center;
+  background-color: transparent;
+  color: #b2b2b2;
+}
+
+.tabButton:hover {
+  cursor: pointer;
+}
+
+.tablist-items {
+  height: 52px;
+  width: 70%;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}

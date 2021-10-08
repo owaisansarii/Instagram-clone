@@ -1,13 +1,17 @@
 import Mobile from "../mobile/mobile";
 import "./login.css";
 import { Link } from "react-router-dom";
+import { useContext, useRef } from "react";
+import { loginCall } from "../../apiCalls";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import ButtonUnstyled, {
   buttonUnstyledClasses,
 } from "@mui/core/ButtonUnstyled";
 import { styled } from "@mui/system";
+import { AuthContext } from "../../context/authContext";
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = () => {
   const CustomButtonRoot = styled("button")(`
   background-color: #007fff;
   width: 77%;
@@ -40,7 +44,16 @@ const Login = ({ setIsLoggedIn }) => {
     box-shadow: 0 0 0 0 rgba(0, 127, 255, 0);
   }
 `);
-
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { isFetching, error, dispatch } = useContext(AuthContext);
+  const handleClick = (e) => {
+    e.preventDefault();
+    loginCall(
+      { email: emailRef.current.value, password: passwordRef.current.value },
+      dispatch
+    );
+  };
   function CustomButton(props) {
     return <ButtonUnstyled {...props} component={CustomButtonRoot} />;
   }
@@ -52,23 +65,30 @@ const Login = ({ setIsLoggedIn }) => {
           <div className="login_page_content">
             <div className="login_right">
               <div className="logo">Instagram</div>
-              <div className="login_content">
+              <form className="login_content" onSubmit={handleClick}>
                 <input
                   type="text"
                   name="usernmae"
                   placeholder="Phone number, username or email"
+                  ref={emailRef}
+                  required
                 />
-                <input type="password" name="password" placeholder="Password" />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  ref={passwordRef}
+                  minLength="6"
+                  required
+                />
                 <div className="login_btn">
-                  <Link to="/">
-                    <CustomButton
-                      onClick={() => {
-                        setIsLoggedIn(true);
-                      }}
-                    >
-                      Log In
-                    </CustomButton>
-                  </Link>
+                  <CustomButton>
+                    {isFetching ? (
+                      <CircularProgress style={{ color: "#fff" }} size={20} />
+                    ) : (
+                      "Log in"
+                    )}
+                  </CustomButton>
                 </div>
                 <div className="or">
                   <div className="line"></div>
@@ -79,6 +99,18 @@ const Login = ({ setIsLoggedIn }) => {
                   <i className="fab fa-facebook-square"> </i>
                   <span> Log in with Facebook</span>
                 </div>
+                {error && (
+                  <div
+                    style={{
+                      color: "red",
+                      fontSize: "14px",
+                      marginTop: "10px",
+                    }}
+                  >
+                    Sorry, your password was incorrect. Please double-check your
+                    password.
+                  </div>
+                )}
                 <div
                   style={{
                     marginTop: "20px",
@@ -87,7 +119,7 @@ const Login = ({ setIsLoggedIn }) => {
                 >
                   Forgot passwod?
                 </div>
-              </div>
+              </form>
             </div>
             <div className="create">
               <div

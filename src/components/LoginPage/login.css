@@ -17,10 +17,9 @@ body {
 }
 
 .login_right {
-  height: 375px;
+  /* height: 375px; */
   width: 100%;
   margin-top: 60px;
-
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
 }
